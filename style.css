@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@font-face {
+    font-family: "DmSerif";
+    src: url(./assets/fonts/Rosie-Brown-Serif-Demo.ttf.ttf);
+}
+@font-face {
+    font-family: "Sherif";
+    src: url(./assets/fonts/DMSerifDisplay-Regular.ttf);
+}
+    /* L'étoile donne du style à TOUS les éléments
+    *{
+        margin: 0;
+        padding: 0;
+    } */
+
+body { font-family: "DmSerif", Verdana;
+    background-image: url(./assets/img/WALL-NEUVI.jpg);
+    /* VH= 100% de la taille de l'écran */
+    min-height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  /* Les tailles de polices doivent etre en REM */
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 8px #000000d5;
+  color: rgb(43, 70, 226);
+  font-family: 'Sherif', sans-serif;
+}
+main {
+    height: auto;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.856);
+    /* Centrer une boite */
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 20px 4px black;
+    padding: 15px;
+}
+
+h2{
+    margin: 0;
+}
+.flexbox,
+.grid,
+.team,
+.artefact {
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 150px;
+}
+
+/* FLEXBOX */
+/* Sert à répartir équitablement des éléments sur la page */
+.flexbox-container {
+    display: grid;
+}
+.flexbox img {
+    width: 10%;
+}
+.flexbox ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.flexbox li{
+list-style: none;
+height: auto;
+width: 100%;
+margin: 10px;
+background-color: rgba(31, 60, 228, 0.795);
+/* Centrer un unique élément veticalement et horizontalement */
+display: flex;
+justify-content: fle;
+align-items: center;
+border-radius: 10px;
+}
+
+.flexbox p{
+    display: grid;
+    font-family: 'Sherif', sans-serif;
+}
+
+/* TEAM COMP */
+.team-container {
+    display: grid;
+    font-family: "Sherif";
+}
+.team img{
+    width: 50%;
+    
+}
+
+/* GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .grid img {
+      width: 80%;
+      margin: 20px auto;
+      display: block;
+  }
+
+  form { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "il i2"
+    "ta ta"
+    "vi bt";
+}
+
+input, textarea {
+    margin: 5px;
+    border: 1px solid darkblue;
+    border-radius: 5px; 
+}
+
+textarea {
+    grid-area: ta;
+    height: 40px;
+    resize: none;
+}
+
+#btn-submit {
+    grid-area: bt;
+    cursor: pointer;
+    background-color: rgba(15, 15, 180, 0.863);
+    transition: 0.2s;
+}
+
+#btn-submit:hover {
+    background: rgb(61, 12, 197);
+    color: white;
+}
+
+/* ABSOLUTE */
+/* Sans élément en Relative, de base, l'élément en absolute l'est par rapport au Body */
+/* Il faut mettre une position relative au parent pour contraindre l'élement en absolute dans ses frontieres */
+.artefact-container {
+    display: grid;
+    font-family: "Sherif";
+}
+.artefact img{
+    width: 100px;
+    
+}
+
+
+#circle1 {
+    height: 60px;
+    width: 60px;
+    background-color: rgba(22, 61, 190, 0.747);
+    position: absolute;
+    border-radius: 150px;
+    top: 0;
+    right: 0;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 630px) {
+    .grid-container {
+        display: block;
+    }
+    .grid-container {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "i1"
+        "i2"
+        "ta"
+        "bt";
+    }
+}
